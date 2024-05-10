@@ -11,7 +11,12 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Text("Login"),
+      body: Column(
+        children: [
+          Text("Login"),
+          TextField()
+        ],
+      ),
     );
   }
 }
