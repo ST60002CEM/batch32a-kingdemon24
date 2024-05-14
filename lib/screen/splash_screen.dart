@@ -2,16 +2,18 @@ import 'package:final_assignment/screen/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     // Adding a Future.delayed to simulate a loading process
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       // Navigate to the next page after 2 seconds
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => LoginScreen()), // Replace NextPage() with your next page
+        MaterialPageRoute(
+            builder: (context) =>
+                const LoginScreen()), // Replace NextPage() with your next page
       );
     });
 
@@ -20,12 +22,17 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            SizedBox(
+              height: 500,
+              width: double.infinity,
+              child: Image.asset('assets/images/logo.png'),
+            ),
+            const Text(
               "ARTIFY",
               style: TextStyle(fontSize: 24),
             ),
-            SizedBox(height: 20),
-            CircularProgressIndicator(), // Adding a CircularProgressIndicator
+            const SizedBox(height: 20),
+            const CircularProgressIndicator(), // Adding a CircularProgressIndicator
           ],
         ),
       ),
