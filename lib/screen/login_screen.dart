@@ -227,7 +227,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const Divider(),
-                    gap,
+                    // gap,
                     Align(
                       alignment: Alignment.center,
                       child: Row(
@@ -242,16 +242,15 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           Align(
                               child: Image.asset(
-                            'assets/images/Google.jpg',
-                            height: 50,
-                            width: 70,
+                            'assets/images/Facebook.png',
+                            height: 80,
                           )),
-                          Align(
-                              child: Image.asset(
-                            'assets/images/Google.jpg',
-                            height: 50,
-                            width: 70,
-                          ))
+                          // Align(
+                          //     child: Image.asset(
+                          //   'assets/images/Google.jpg',
+                          //   height: 50,
+                          //   width: 70,
+                          // ))
                         ],
                       ),
                     ),
