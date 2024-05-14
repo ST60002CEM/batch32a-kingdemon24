@@ -10,8 +10,13 @@ class HomePageScreen extends StatefulWidget {
 class _HomePageScreenState extends State<HomePageScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text("homePage")),
+    return Scaffold(
+      appBar: AppBar(
+          backgroundColor: Colors.blue[100], title: const Text("DashBoard")),
+      body: const Center(child: Text("homePage")),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: const [],
+      // ),
     );
   }
 }
