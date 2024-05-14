@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
 
-class HomePageScreen extends StatefulWidget {
+class HomePageScreen extends StatelessWidget {
   const HomePageScreen({super.key});
 
   @override
-  State<HomePageScreen> createState() => _HomePageScreenState();
-}
-
-class _HomePageScreenState extends State<HomePageScreen> {
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          backgroundColor: Colors.blue[100], title: const Text("DashBoard")),
-      body: const Center(child: Text("homePage")),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: const [],
-      // ),
-    );
+    return const SizedBox.expand(child: Text("Profile Screen"));
   }
 }
