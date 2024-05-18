@@ -138,8 +138,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ElevatedButton(
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          // Perform registration logic here
-                          // For simplicity, let's just navigate to login screen
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content:
+                                  Text('Your Account successfully created'),
+                              backgroundColor:
+                                  Colors.green, // Set background color to green
+                              behavior: SnackBarBehavior
+                                  .fixed, // Set behavior to floating
+                            ),
+                          );
+
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
