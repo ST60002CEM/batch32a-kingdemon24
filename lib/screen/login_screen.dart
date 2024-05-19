@@ -24,17 +24,17 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SingleChildScrollView(
         child: Stack(
           children: [
-            Opacity(
-              opacity: 0.97,
-              child: Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/background_image.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
+            // Opacity(
+            //   opacity: 0.97,
+            //   child: Container(
+            //     decoration: const BoxDecoration(
+            //       image: DecorationImage(
+            //         image: AssetImage('assets/images/background_image.jpg'),
+            //         fit: BoxFit.cover,
+            //       ),
+            //     ),
+            //   ),
+            // ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Form(
@@ -79,6 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         "Forget Password?",
                       ),
                     ),
+
                     gap,
                     ElevatedButton(
                       onPressed: () {
@@ -102,14 +103,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(200, 50),
-                        backgroundColor: Colors.orange,
                       ),
                       child: const Text(
                         "LOGIN",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
                       ),
                     ),
                     gap,
@@ -117,7 +113,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text("Don't have an account?"),
+                          const Text(
+                            "Don't have an account?",
+                          ),
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
