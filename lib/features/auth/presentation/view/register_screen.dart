@@ -1,5 +1,5 @@
-import 'package:final_assignment/commonWidget/my_textform.dart';
-import 'package:final_assignment/screen/login_screen.dart';
+import 'package:final_assignment/features/auth/presentation/widgets/my_textform.dart';
+import 'package:final_assignment/features/auth/presentation/view/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {

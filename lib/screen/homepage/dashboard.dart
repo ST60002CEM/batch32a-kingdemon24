@@ -1,6 +1,6 @@
 import 'package:final_assignment/screen/homepage/homepage_screen.dart';
-import 'package:final_assignment/screen/login_screen.dart';
-import 'package:final_assignment/screen/register_screen.dart';
+import 'package:final_assignment/features/auth/presentation/view/login_screen.dart';
+import 'package:final_assignment/features/auth/presentation/view/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {
