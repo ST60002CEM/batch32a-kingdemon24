@@ -1,76 +1,57 @@
-import 'dart:async';
-
-import 'package:final_assignment/features/auth/presentation/view/login_screen.dart';
+import 'package:final_assignment/features/splash/presentation/viewmodel/splash_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  ConsumerState<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
-  double _progressValue = 0.0;
-
+class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   void initState() {
+    ref.read(splashViewModelProvider.notifier).openLoginView();
     super.initState();
-    startLoading();
-  }
-
-  void startLoading() {
-    Timer.periodic(const Duration(milliseconds: 10), (timer) {
-      setState(() {
-        if (_progressValue >= 1.0) {
-          timer.cancel();
-
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => const LoginScreen()),
-          );
-        } else {
-          _progressValue += 0.01;
-        }
-      });
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green[50],
       body: Stack(
         children: [
-          Opacity(
-            opacity: 0.97,
-            child: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/logo.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  'assets/images/logo.png',
-                  height: 300,
-                  width: double.infinity,
+                SizedBox(
+                  height: 200,
+                  width: 200,
+                  child: Image.asset('assets/images/logo.png'),
                 ),
-                const SizedBox(height: 20),
-                LinearProgressIndicator(
-                  value: _progressValue,
-                  color: Colors.orange,
-                  backgroundColor: Colors.grey[300],
+                const Text(
+                  'Artify',
+                  style: TextStyle(
+                    fontSize: 25,
+                  ),
                 ),
+                const SizedBox(height: 10),
+                const CircularProgressIndicator(),
+                const SizedBox(height: 10),
+                const Text('version : 1.0.0')
               ],
             ),
-          )
+          ),
+          Positioned(
+            bottom: 10,
+            left: MediaQuery.of(context).size.width / 4,
+            child: const Text(
+              'Developed by: Biraj Bogati',
+              style: TextStyle(fontSize: 15),
+            ),
+          ),
         ],
       ),
     );

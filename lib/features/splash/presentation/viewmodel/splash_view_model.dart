@@ -1,5 +1,3 @@
-
-
 import 'package:final_assignment/features/splash/presentation/navigator/splash_navigator.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
