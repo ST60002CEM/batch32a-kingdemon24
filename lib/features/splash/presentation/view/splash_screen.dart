@@ -38,20 +38,21 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
+                const Spacer(),
                 const CircularProgressIndicator(),
-                const SizedBox(height: 10),
+                const Spacer(),
                 const Text('version : 1.0.0')
               ],
             ),
           ),
-          Positioned(
-            bottom: 10,
-            left: MediaQuery.of(context).size.width / 4,
-            child: const Text(
-              'Developed by: Biraj Bogati',
-              style: TextStyle(fontSize: 15),
-            ),
-          ),
+          // Positioned(
+          //   bottom: 10,
+          //   left: MediaQuery.of(context).size.width / 4,
+          //   child: const Text(
+          //     'Developed by: Biraj Bogati',
+          //     style: TextStyle(fontSize: 15),
+          //   ),
+          // ),
         ],
       ),
     );
