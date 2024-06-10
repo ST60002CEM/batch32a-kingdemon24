@@ -13,7 +13,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     Center(child: Text('Home')),
-    Center(child: Text('Categories')),
+    Center(child: Text('Pictures')),
     Center(child: Text('Saved')),
     Center(child: Text('Profile')),
   ];
@@ -40,7 +40,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.category),
-              label: 'Category',
+              label: 'Pictures',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.bookmark),

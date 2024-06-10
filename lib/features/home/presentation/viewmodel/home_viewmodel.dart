@@ -3,8 +3,6 @@ import 'package:final_assignment/features/home/presentation/navigator/home_navig
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
-
 final homeViewModelProvider = StateNotifierProvider<HomeViewModel, bool>(
   (ref) => HomeViewModel(ref.read(homeViewNavigatorProvider)),
 );
