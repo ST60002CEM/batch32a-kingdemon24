@@ -330,7 +330,6 @@ class _LoginViewState extends ConsumerState<LoginView> {
                               child: const Text(
                                 'Sign up',
                                 style: TextStyle(
-                                  fontFamily: 'EduTASBeginner Bold',
                                   // color: lightColorScheme.primary,
                                   color: Colors.black,
                                 ),
@@ -392,15 +391,6 @@ class _LoginViewState extends ConsumerState<LoginView> {
                                   color: Colors.pink,
                                 ),
                                 Text('Mail'),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Icon(
-                                  Icons.apple,
-                                  color: Colors.black,
-                                ),
-                                Text('Apple'),
                               ],
                             ),
                           ],
