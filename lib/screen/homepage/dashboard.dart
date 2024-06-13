@@ -1,6 +1,6 @@
+import 'package:final_assignment/features/auth/presentation/view/login_view.dart';
+import 'package:final_assignment/features/auth/presentation/view/register_view.dart';
 import 'package:final_assignment/screen/homepage/homepage_screen.dart';
-import 'package:final_assignment/features/auth1/presentation/view/login_screen.dart';
-import 'package:final_assignment/features/auth1/presentation/view/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {
@@ -15,9 +15,9 @@ class _DashboardState extends State<Dashboard> {
   List<Widget> lstBottomScreen = [
     const HomePageScreen(),
     const HomePageScreen(),
-    const LoginScreen(),
+    const LoginView(),
     // const AboutUsScreen(),
-    const RegisterScreen(),
+    const RegisterView(),
   ];
 
   @override
