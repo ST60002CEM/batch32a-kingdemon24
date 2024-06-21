@@ -136,15 +136,15 @@ class _RegisterViewState extends ConsumerState<RegisterView> {
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       AuthEntity auth = AuthEntity(
-                        fname: fNameController.text,
+                        firstname: fNameController.text,
                         email: emailController.text,
                         phone: phoneController.text,
                         password: passwordController.text,
-                        lname: fNameController.text,
+                        lastname: fNameController.text,
                       );
                       ref
                           .read(authViewModelProvider.notifier)
-                          .registerUser(auth);  
+                          .registerUser(auth);
                     }
                   },
                   style: ElevatedButton.styleFrom(
@@ -156,7 +156,7 @@ class _RegisterViewState extends ConsumerState<RegisterView> {
                 ),
                 const SizedBox(height: 20),
                 TextButton(
-                  onPressed: () { 
+                  onPressed: () {
                     ref.read(registerViewNavigatorProvider).openLoginView();
                   },
                   child: const Text('Already have an account? Login Now'),
