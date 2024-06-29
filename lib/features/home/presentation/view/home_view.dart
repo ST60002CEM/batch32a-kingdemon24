@@ -1,3 +1,4 @@
+import 'package:final_assignment/features/home/presentation/view/product_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,11 +12,14 @@ class HomeView extends ConsumerStatefulWidget {
 class _HomeViewState extends ConsumerState<HomeView> {
   int _selectedIndex = 0;
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    Center(child: Text('Home')),
-    Center(child: Text('Pictures')),
-    Center(child: Text('Saved')),
-    Center(child: Text('Profile')),
+  static final List<Widget> _widgetOptions = <Widget>[
+    // const ProductView(),
+    const ProductView(),
+    // const Center(child: Text('Home')),
+    const Center(child: Text('Pictures')),
+    const Center(child: Text('Pictures')),
+    const Center(child: Text('Saved')),
+    const Center(child: Text('Profile')),
   ];
 
   void _onItemTapped(int index) {
