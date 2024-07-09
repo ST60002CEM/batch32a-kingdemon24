@@ -1,7 +1,11 @@
 import 'package:final_assignment/features/auth/domain/entity/auth_entity.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'auth_api_model.g.dart';
+
+final authApiModelProvider =
+    Provider<AuthApiModel>((ref) => const AuthApiModel.empty());
 
 @JsonSerializable()
 class AuthApiModel {
@@ -10,7 +14,7 @@ class AuthApiModel {
   final String firstname;
   final String lastname;
   final String email;
-  final String password;
+  final String? password;
   final String phone;
 
   AuthApiModel({
@@ -18,7 +22,7 @@ class AuthApiModel {
     required this.firstname,
     required this.lastname,
     required this.email,
-    required this.password,
+    this.password,
     required this.phone,
   });
 
@@ -34,8 +38,15 @@ class AuthApiModel {
       firstname: firstname,
       lastname: lastname,
       email: email,
-      password: password,
+      password: password??"",
       phone: phone,
     );
   }
+  const AuthApiModel.empty()
+  :id="",
+  firstname="",
+  lastname="",
+  email="",
+  password="",
+  phone="";
 }
