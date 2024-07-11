@@ -60,35 +60,46 @@ void main() {
     expect(authState.error, isNull);
   });
 
-  // test("registration tesr with valid credentials", (){
-  //   const fname='biraj';
-  //   const lname='bogati';
-  //   const email='biraj@gmail.com';
-  //   const phone='9863477408';
-  //   const password ='1234567890';
-  //   const cpassword='1234567890';
+  test(
+    'Register new user test with all details test',
+    () async {
+      // Arrange
+      when(mockAuthUseCase.registerUser(any)).thenAnswer((innovation) {
+        final auth = innovation.positionalArguments[0] as AuthEntity;
 
-  //   // Arrange
-  //   when(mockAuthUseCase.registerUser(any, any)).thenAnswer((invocation) {
-  //     final fname=invocation.positionalArguments[0] as String;
-  //     final lname=invocation.positionalArguments[1] as String;
-  //     final phone=invocation.positionalArguments[2] as String;
-  //     final email = invocation.positionalArguments[0] as String;
-  //     final password = invocation.positionalArguments[1] as String;
-  //     // return Future.value(
-  //     //   email == correctEmail && password == correctPassword
-  //     //       ? const Right(true)
-  //     //       : Left(Failure(error: 'Invalid')),
-  //     // );
-  //   });
+        return Future.value(
+          auth.firstname.isNotEmpty &&
+                  auth.lastname.isNotEmpty &&
+                  auth.email.isNotEmpty &&
+                  auth.password.isNotEmpty &&
+                  auth.email.contains('@') &&
+                  auth.email.contains('.') &&
+                  auth.phone.length == 10
+              ? const Right(true)
+              : Left(
+                  Failure(error: 'Invalid'),
+                ),
+        );
+      });
 
-  //   // Act
+      // Act
+      await container
+          .read(authViewModelProvider.notifier)
+          .registerUser(const AuthEntity(
+            firstname: 'biraj',
+            lastname: 'bogati',
+            email: 'biraj@gmail.com',
+            password: '12345678',
+            phone: '1234567890',
+          ));
 
-  //   // Assert
-  //   expect(authState.error, isNull);
+      final state = container.read(authViewModelProvider);
 
-  // }
-  // );
+      // Assert
+      expect(state.isLoading, false);
+      expect(state.error, null);
+    },
+  );
 
   tearDown(() {
     container.dispose();
