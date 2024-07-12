@@ -53,6 +53,7 @@ dependencies:
   json_annotation: ^4.9.0  
   json_serializable: ^6.8.0
   carousel_slider: ^4.2.1
+
   connectivity_plus: ^4.0.1
   test_cov_console: ^0.2.2
   local_auth: ^2.2.0

@@ -1,3 +1,4 @@
+
 import 'dart:async';
 
 import 'package:all_sensors/all_sensors.dart';
@@ -7,6 +8,9 @@ import 'package:final_assignment/features/connectivity.dart';
 import 'package:final_assignment/features/home/presentation/view/product_view.dart';
 import 'package:final_assignment/features/home/presentation/viewmodel/home_viewmodel.dart';
 import 'package:final_assignment/features/profile/presentation/view/profile_view.dart';
+
+import 'package:final_assignment/features/home/presentation/view/product_view.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -23,8 +27,10 @@ class _HomeViewState extends ConsumerState<HomeView> {
   static final List<Widget> _widgetOptions = <Widget>[
     // const ProductView(),
     const ProductView(),
+
     const InternetCheckView(),
     const ProfileView(),
+
     // const Center(child: Text('Home')),
     const Center(child: Text('Pictures')),
     const Center(child: Text('Pictures')),
