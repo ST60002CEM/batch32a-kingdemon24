@@ -1,5 +1,6 @@
 import 'package:final_assignment/features/auth/domain/entity/auth_entity.dart';
 import 'package:final_assignment/features/auth/presentation/navigator/register_navigator.dart';
+// import 'package:final_assignment/features/auth/presentation/viewmodel/register_view_model.dart';
 import 'package:final_assignment/features/auth/presentation/viewmodel/auth_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -24,6 +25,7 @@ class _RegisterViewState extends ConsumerState<RegisterView> {
 
   @override
   Widget build(BuildContext context) {
+    // final authState = ref.watch(registerViewModelProvider);
     final authState = ref.watch(authViewModelProvider);
     return Scaffold(
       body: SingleChildScrollView(
@@ -144,6 +146,7 @@ class _RegisterViewState extends ConsumerState<RegisterView> {
                       );
                       ref
                           .read(authViewModelProvider.notifier)
+                          // .read(registerViewModelProvider.notifier)
                           .registerUser(auth);
                     }
                   },
