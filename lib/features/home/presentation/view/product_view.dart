@@ -1,5 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:final_assignment/app/constants/api_endpoint.dart';
+
+import 'package:final_assignment/features/home/presentation/view/drawer/drawer_view.dart';
+
 import 'package:final_assignment/features/home/presentation/viewmodel/product_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -47,7 +50,8 @@ class _ProductViewState extends ConsumerState<ProductView> {
                     ),
                   ),
                   Text(
-                    'Biraj Bogati',
+                    'Biraj Bogati1',
+
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 12,
@@ -218,6 +222,8 @@ class _ProductViewState extends ConsumerState<ProductView> {
             )
           ],
         ),
+        drawer: const DrawerView(),
+
       ),
     );
   }
